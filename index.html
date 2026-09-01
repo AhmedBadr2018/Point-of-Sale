@@ -9,22 +9,12 @@
 <body>
     <div id="cheerpj-container" style="width: 800px; height: 600px;" />
     <script>
-        async function runJava() {       
+        async function runJava() {    
             await cheerpjInit({
-                enableStringSharing: true
+                javaProperties: [
+                    "-Dsun.java2d.fontpath=/app/Point-of-Sale/fonts"
+                ]
             });
-            const fontResponse = await fetch('/Point-of-Sale/tahoma.ttf');
-            const fontBuffer = await fontResponse.arrayBuffer();          
-            const fontData = new Uint8Array(fontBuffer);
-            cheerpOSAddStringFile("/files/Tahoma.ttf", fontData);
-            const javaIO = await cheerpjRunLibrary("/lib/rt.jar");
-            const File = await cheerpjGenericClass("java.io.File");
-            const Font = await cheerpjGenericClass("java.awt.Font");
-            const GraphicsEnvironment = await cheerpjGenericClass("java.awt.GraphicsEnvironment");            
-            const fontFile = await new File("/files/Tahoma.ttf");
-            let tTahomaFont = await Font.createFont(Font.TRUETYPE_FONT, fontFile);
-            const ge = await GraphicsEnvironment.getLocalGraphicsEnvironment();
-            await ge.registerFont(tTahomaFont);             
             cheerpjCreateDisplay(-1, -1, document.getElementById("cheerpj-container"));
             await cheerpjRunJar(
                 "/app/Point-of-Sale/StandaloneApp.jar",
