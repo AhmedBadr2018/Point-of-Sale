@@ -29,12 +29,9 @@
                     "-Dsun.java2d.fontpath=/app/Point-of-Sale/fonts"
                 ]
             });
-
-            // Fetch the font and add it to the virtual filesystem so OpenJDK can read it
             const response = await fetch('./fonts/tahoma.ttf');
             const fontBuffer = await response.arrayBuffer();
-            cheerpOSAddFile("/app/Tahoma.ttf", new Uint8Array(fontBuffer)); 
-            
+            cheerpOSAddStringFile("/app/Tahoma.ttf", new Uint8Array(fontBuffer));             
             cheerpjCreateDisplay(-1, -1, document.getElementById("cheerpj-container"));
             await cheerpjRunJar(
                 "/app/Point-of-Sale/StandaloneApp.jar",
