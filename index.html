@@ -1,36 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-    
 <head>
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <script src="https://cjrtnc.leaningtech.com/4.3/loader.js"></script>    
     <title>BadrTech</title>
-
-    <script src="https://cjrtnc.leaningtech.com/4.3/loader.js"></script>
-
 </head>
-    
 <body>
-    <div id="cheerpjContainer"></div>
-
     <script>
-         async function runJava() {
-             
+         async function runJava() {       
              await cheerpjInit();
-             
-             cheerpjCreateDisplay(800, 600);
-
              await cheerpjRunJar("/app/Point-of-Sale/StandaloneApp.jar");
          }
-
-        console.log('helloWorld!');
-        
         window.addEventListener('load', runJava);
-    
     </script>
-    
 </body>
-    
 </html>
