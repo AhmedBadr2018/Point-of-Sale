@@ -36,10 +36,7 @@
     
 <body onload="initCheerpJ()">
 
-    <!-- الحاوية الموسطة في المنتصف -->
-    <div id="applicationContainer"></div>
-
-    <div id="applicationContainer" style="width: 800px; height: 600px;" />
+    <div id="applicationContainer" />
 
     <script>
         async function initCheerpJ() {
@@ -50,7 +47,7 @@
                 ]
             });
             
-            cheerpjCreateDisplay(-1, -1, document.getElementById("applicationContainer"));
+            cheerpjCreateDisplay(800, 600, document.getElementById("applicationContainer"));
 
             // استبدل المسار التالي بملف الـ Jar الخاص بك أو التطبيق
             await cheerpjRunJar(
