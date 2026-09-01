@@ -1,37 +1,38 @@
 <!DOCTYPE html>
 <html lang="ar">
+    
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BadrTechnology</title>
+    
     <style>
-        /* إعدادات الصفحة لملء الشاشة بالكامل */
         html, body {
             margin: 0;
             padding: 0;
             width: 100%;
             height: 100%;
-            background-color: #FFFFFF; /* لون خلفية داكن تناسقي */
+            background-color: #FFFFFF;
             display: flex;
-            justify-content: center; /* توسيط أفقي */
-            align-items: center;     /* توسيط عمودي */
+            justify-content: center;
+            align-items: center;
             overflow: hidden;
         }
-
-        /* الحاوية التي سيتم عرض تطبيق CheerpJ داخله */
+        
         #applicationContainer {
-            width: 800px;  /* حدد العرض المناسب لتطبيقك */
-            height: 600px; /* حدد الارتفاع المناسب لتطبيقك */
+            width: 800px;
+            height: 700;
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
-            background-color: #000;
+            background-color: #FFFFFF;
             display: flex;
             justify-content: center;
             align-items: center;
         }
     </style>
-
-    <!-- استدعاء مكتبة CheerpJ الرسمية -->
-    <script src="https://cjrtnc.leaningtech.com/4.3/loader.js"></script>
+    
+    <script src="https://cjrtnc.leaningtech.com/4.3/loader.js" />
+    
 </head>
     
 <body onload="initCheerpJ()">
@@ -40,7 +41,7 @@
 
     <script>
         async function initCheerpJ() {
-            // تهيئة CheerpJ وتشغيل التطبيق داخل الحاوية الموسطة
+
             await cheerpjInit({
                 javaProperties: [
                     "-Dsun.java2d.fontpath=/app/Point-of-Sale/fonts"
@@ -49,7 +50,6 @@
             
             cheerpjCreateDisplay(800, 600, document.getElementById("applicationContainer"));
 
-            // استبدل المسار التالي بملف الـ Jar الخاص بك أو التطبيق
             await cheerpjRunJar(
                 "/app/Point-of-Sale/StandaloneApp.jar",
                 {
@@ -57,7 +57,9 @@
                 }
             );
         }
-        console.log('hi');
+        
     </script>
+    
 </body>
+    
 </html>
