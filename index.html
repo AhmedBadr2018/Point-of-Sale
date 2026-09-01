@@ -16,7 +16,7 @@
             const fontResponse = await fetch('/Point-of-Sale/tahoma.ttf');
             const fontBuffer = await fontResponse.arrayBuffer();          
             const fontData = new Uint8Array(fontBuffer);
-            cheerpjCreateFile("/files/Tahoma.ttf", fontData);
+            cheerpOSAddStringFile("/files/Tahoma.ttf", fontData);
             const javaIO = await cheerpjRunLibrary("/lib/rt.jar");
             const File = await cheerpjGenericClass("java.io.File");
             const Font = await cheerpjGenericClass("java.awt.Font");
