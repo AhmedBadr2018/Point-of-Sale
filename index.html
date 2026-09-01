@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+    
 <head>
     <title>BadrTech</title>
     <script src="https://leaningtech.com"></script>
 </head>
-<body>
     
+<body>    
     <script>
         async function runJava() {
             await cheerpjInit(); 
             await cheerpjRunMain("StandaloneApp.jar", "/app/");
         }
-        
-        // Safely trigger it after window loads
         window.addEventListener('load', runJava);
     </script>
 </body>
