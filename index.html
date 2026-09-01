@@ -5,6 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cjrtnc.leaningtech.com/4.3/loader.js"></script>    
     <title>BadrTech</title>
+    <style>
+        @font-face {
+        font-family: 'Tahoma';
+        src: url('./fonts/tahoma.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+        }
+        @font-face {
+            font-family: 'Tahoma-Bold';
+            src: url('./fonts/tahoma-bold.ttf') format('truetype');
+            font-weight: bold;
+            font-style: normal;
+        }
+    </style>
 </head>
 <body>
     <div id="cheerpj-container" style="width: 800px; height: 600px;" />
@@ -15,6 +29,12 @@
                     "-Dsun.java2d.fontpath=/app/Point-of-Sale/fonts"
                 ]
             });
+
+            // Fetch the font and add it to the virtual filesystem so OpenJDK can read it
+            const response = await fetch('./fonts/tahoma.ttf');
+            const fontBuffer = await response.arrayBuffer();
+            cheerpOSAddFile("/app/Tahoma.ttf", new Uint8Array(fontBuffer)); 
+            
             cheerpjCreateDisplay(-1, -1, document.getElementById("cheerpj-container"));
             await cheerpjRunJar(
                 "/app/Point-of-Sale/StandaloneApp.jar",
