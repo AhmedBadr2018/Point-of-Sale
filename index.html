@@ -2,20 +2,25 @@
 <html lang="en">
     
 <head>
+    <meta charset="UTF-8">
     <title>BadrTech</title>
-
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' https://cjrtnc.leaningtech.com https://cheerpj.com;">
-
     <script src="https://cheerpj.com"></script>
 </head>
     
-<body>    
+<body>
+    <div id="cheerpjContainer"></div>
+
     <script>
         async function runJava() {
-            await cheerpjInit(); 
-            await cheerpjRunMain("StandaloneApp.jar", "/app/");
+            await cheerpjInit();
+            cheerpjCreateDisplay(800, 600);
+            await cheerpjRunJar("/app/StandaloneApp.jar");
         }
+        
         window.addEventListener('load', runJava);
     </script>
+    
 </body>
+    
 </html>
