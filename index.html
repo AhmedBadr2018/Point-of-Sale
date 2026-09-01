@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BadrTech</title>
+    <!-- Load CheerpJ loader script -->
+    <script src="https://leaningtech.com"></script>
+</head>
+<body>
+    <!-- Optional: Create a display container for GUI / Swing apps -->
+    <div id="cheerpjContainer"></div>
+
+    <script>
+        async function runJava() {
+            await cheerpjInit();
+            // Optional display size for AWT/Swing applications
+            cheerpjCreateDisplay(800, 600);
+            // Run the JAR file hosted relative to your root path (/app/ maps to root)
+            await cheerpjRunJar("/app/StandaloneApp.jar");
+        }
+        runJava();
+    </script>
+</body>
+</html>
