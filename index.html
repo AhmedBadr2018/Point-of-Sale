@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cjrtnc.leaningtech.com/4.3/loader.js"></script>    
-    <title>BadrTech</title>
-      <style>
+    <title>CheerpJ Centered - GitHub Pages</title>
+    <style>
         /* إعدادات الصفحة لملء الشاشة بالكامل */
         html, body {
             margin: 0;
@@ -18,6 +17,7 @@
             align-items: center;     /* توسيط عمودي */
             overflow: hidden;
         }
+
         /* الحاوية التي سيتم عرض تطبيق CheerpJ داخله */
         #applicationContainer {
             width: 800px;  /* حدد العرض المناسب لتطبيقك */
@@ -29,25 +29,27 @@
             align-items: center;
         }
     </style>
+
+    <!-- استدعاء مكتبة CheerpJ الرسمية -->
+    <script src="https://leaningtech.com"></script>
 </head>
-<body onload="runJava()">
-    <div id="applicationContainer" />
+<body onload="initCheerpJ()">
+
+    <!-- الحاوية الموسطة في المنتصف -->
+    <div id="applicationContainer"></div>
+
     <script>
-        async function runJava() {    
-            await cheerpjInit({
-                javaProperties: [
-                    "-Dsun.java2d.fontpath=/app/Point-of-Sale/fonts"
-                ]
-            });         
+        async function initCheerpJ() {
+            // تهيئة CheerpJ وتشغيل التطبيق داخل الحاوية الموسطة
+            await cheerpjInit();
             cheerpjCreateDisplay(800, 600, document.getElementById("applicationContainer"));
-            // cheerpjCreateDisplay(-1, -1, document.getElementById("cheerpj-container"));
+            // استبدل المسار التالي بملف الـ Jar الخاص بك أو التطبيق
             await cheerpjRunJar(
                 "/app/Point-of-Sale/StandaloneApp.jar",
                 {
                     preload: true
                 });
-         }
-        // window.addEventListener('load', runJava);
+        }
     </script>
 </body>
 </html>
