@@ -10,7 +10,8 @@
     <script>
          async function runJava() {       
              await cheerpjInit();
-             await cheerpjRunJar("/app/Point-of-Sale/StandaloneApp.jar");
+             cheerpjCreateDisplay(-1, -1);
+             await cheerpjRunJar("/app/Point-of-Sale/StandaloneApp.jar", {preload: true});
          }
         window.addEventListener('load', runJava);
     </script>
