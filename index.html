@@ -17,9 +17,12 @@
 
     <script>
          async function runJava() {
+             
              await cheerpjInit();
+             
              cheerpjCreateDisplay(800, 600);
-             await cheerpjRunJar("/app/StandaloneApp.jar");
+
+             await cheerpjRunJar("/Point-of-Sale/StandaloneApp.jar");
          }
 
         console.log('helloWorld!');
