@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BadrTech</title>
+    <title>Badr Tech</title>
     <style>
         /* إعدادات الصفحة لملء الشاشة بالكامل */
         html, body {
@@ -39,11 +39,19 @@
     <!-- الحاوية الموسطة في المنتصف -->
     <div id="applicationContainer"></div>
 
+    <div id="applicationContainer" style="width: 800px; height: 600px;" />
+
     <script>
         async function initCheerpJ() {
             // تهيئة CheerpJ وتشغيل التطبيق داخل الحاوية الموسطة
-            await cheerpjInit();
-            cheerpjCreateDisplay(800, 600, document.getElementById("applicationContainer"));
+            await cheerpjInit({
+                javaProperties: [
+                    "-Dsun.java2d.fontpath=/app/Point-of-Sale/fonts"
+                ]
+            });
+            
+            cheerpjCreateDisplay(-1, -1, document.getElementById("applicationContainer"));
+
             // استبدل المسار التالي بملف الـ Jar الخاص بك أو التطبيق
             await cheerpjRunJar(
                 "/app/Point-of-Sale/StandaloneApp.jar",
