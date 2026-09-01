@@ -7,9 +7,13 @@
     <title>BadrTech</title>
 </head>
 <body>
+    <div id="cheerpj-container" style="width: 800px; height: 600px;" />
     <script>
          async function runJava() {       
-             await cheerpjInit();
+             await cheerpjInit({
+                 enableStringSharing: true
+             });
+             cheerpjCreateDisplay(-1, -1, document.getElementById("cheerpj-container"));
              await cheerpjRunJar("/app/Point-of-Sale/StandaloneApp.jar", {preload: true});
          }
         window.addEventListener('load', runJava);
