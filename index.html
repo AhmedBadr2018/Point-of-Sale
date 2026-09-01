@@ -11,7 +11,7 @@
     <script>
         async function runJava() {       
             await cheerpjInit({
-                enableStringSharing: true;
+                enableStringSharing: true
             });
             const fontResponse = await fetch('/app/Point-of-Sale/tahoma.ttf');
             const fontBuffer = await fontResponse.arrayBuffer();          
