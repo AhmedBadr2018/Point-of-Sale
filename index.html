@@ -16,22 +16,16 @@
     <div id="cheerpjContainer"></div>
 
     <script>
-        // async function runJava() {
-        //     await cheerpjInit();
-        //     cheerpjCreateDisplay(800, 600);
-        //     await cheerpjRunJar("/app/StandaloneApp.jar");
-        // }
+         async function runJava() {
+             await cheerpjInit();
+             cheerpjCreateDisplay(800, 600);
+             await cheerpjRunJar("/app/StandaloneApp.jar");
+         }
 
         console.log('helloWorld!');
         
-        cheerpjInit().then(() => {
-            console.log("CheerpJ is ready!");
-            // Your Java execution code goes here (e.g., cheerpjRunMain)
-        }).catch((err) => {
-            console.error("CheerpJ failed to initialize:", err);
-        });
-        
-        // window.addEventListener('load', runJava);
+        window.addEventListener('load', runJava);
+    
     </script>
     
 </body>
